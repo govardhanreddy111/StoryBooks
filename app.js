@@ -1,14 +1,23 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const passport = require('passport');
+// Passport config
+require('./config/passport')(passport);
+
+// Load Routes
+const auth = require('./routes/auth');
 
 const app = express();
 
 
 app.get('/', (req,res)=>{
     res.send('it works');
-})
-const port = process.env.PORT || 4002;
+});
 
+// Use Routes
+app.use('/auth',auth);
+
+const port = process.env.PORT || 4002;
 
 app.listen(port, ()=>{
     console.log(`server started on port ${port}`);
