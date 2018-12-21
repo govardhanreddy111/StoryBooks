@@ -6,7 +6,11 @@ router.get('/', (req,res)=>{
 });
 
 router.get('/dashboard', (req,res)=>{
-    res.send('dashboard');
+    res.render('layouts/index/dashboard');
+});
+
+router.get('/about', (req,res)=>{
+    res.render('layouts/index/about');
 });
 
 module.exports = router;
