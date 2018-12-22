@@ -31,7 +31,7 @@ const {truncate, stripTags, formatDate, select,editIcon} = require('./helpers/hb
 mongoose.Promise = global.Promise;
 
 // Mongoose Connect
-mongoose.connect(keys.mongoURI(), {
+mongoose.connect(keys.mongoURI, {
     useNewUrlParser: true
 }).then(()=>{
     console.log("Mongo Connected");
