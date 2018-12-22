@@ -26,7 +26,7 @@ const keys = require('./config/keys');
 
 // Handlebars Helpers
 
-const {truncate, stripTags, formatDate, select} = require('./helpers/hbs');
+const {truncate, stripTags, formatDate, select,editIcon} = require('./helpers/hbs');
 
 mongoose.Promise = global.Promise;
 
@@ -51,7 +51,8 @@ app.engine('handlebars', exhbs({
       truncate : truncate,
       stripTags : stripTags,
       formatDate : formatDate,
-      select: select
+      select: select,
+      editIcon : editIcon
     },
     defaultLayout: 'main'
 }));
